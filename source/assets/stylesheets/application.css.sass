@@ -1,0 +1,71 @@
+@import 'compass'
+@import 'animation'
+@import 'bootstrap'
+@import 'bootstrap-responsive'
+
+
+.beaker
+  position: relative
+  width: 426px
+  height: 593px
+  margin: 0 auto
+  background: url('../images/beaker.png') no-repeat
+
+.bubble-1
+  position: absolute
+  left: 150px
+  display: block
+  width: 50px
+  height: 50px
+  border: 10px solid #000
+  background: #7fff00
+  +border-radius(50%)
+  +animation-name(fly-bubble)
+  +animation-duration(8s)
+  +animation-iteration-count(infinite)
+
+.bubble-2
+  @extend .bubble-1
+  left: 200px
+  width: 80px
+  height: 80px
+
+.bubble-3
+  @extend .bubble-1
+  left: 250px
+  width: 30px
+  height: 30px
+
+.bubble-4
+  @extend .bubble-1
+  left: 150px
+  bottom: 90px
+  width: 100px
+  height: 100px
+
++keyframes(fly-bubble)
+  from
+    bottom: 0
+    +transform(scale(.3))
+    +animation-timing-function(ease-in-out)
+  10%
+    bottom: 110px
+    +transform(scale(.3))
+    +animation-timing-function(ease-in-out)
+  30%
+    bottom: 110px
+    +transform(scale(.8))
+    +animation-timing-function(ease-in-out)
+  90%
+    bottom: 545px
+    +transform(scale(.3))
+    +animation-timing-function(ease-in-out)
+  99%
+    bottom: 550px
+    +transform(scale(3))
+    +animation-timing-function(ease-in-out)
+  to
+    border: 0
+    +opacity(0)
+    +transform(scale(.9))
+    +animation-timing-function(ease-in-out)
