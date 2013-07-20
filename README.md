@@ -3,7 +3,7 @@ beaker-bubbles
 
 lab2023 brand animation with css3 property
 
-lab2023 ‘ un logosundan baloncuk cıkartabilir miyiz dedik ve basladik kodlamaya. Eger sizde bunu evde denemek istiyorsaniz yazıyı okumaya devam edin.
+lab2023 ‘ un logosundan baloncuk cıkartabilir miyiz dedik ve basladik kodlamaya.
 
 Bizler HAML, SASS ve COMPAS  teknolojilerinden yararlandik. Generator olarak da MIDDLEMAN  kullandik.
 
