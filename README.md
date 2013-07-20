@@ -47,12 +47,15 @@ Dort adet methodu vardır. Bunlar;
 **ease-in-out** ile animasyon hareketine yavas baslar ivme kazanarak hızlanır ve harekete basladigi gibi yavaslarak durur.
 
 **+animation-name(fly-bubble)**
+
 keyframe-name de kullanılmıs olan alias animate-name ile çağrılmıs olur.
 
 **+animation-duration(8s)**
+
 Animasyonun hareket suresini ihtiva eder. 
 
 **+animation-iteration-count(infinite)**
+
 Animasyonun kaç kez oynayacagini gosterir. infinite ile sonsuz bir tekrar olusturulurken, bir tam sayı ile bu dongu sınırlandırabilir.
 
 **Not:** İlerleyen zamanlarda animasyonu biraz daha gelistirmeyi dusunuyoruz. Ornegin icindeki sıvının dalgalanmasi baloncuklarin harekitinin iyilestirilmesi gibi dusucelerimiz var.
