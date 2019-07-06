@@ -1,15 +1,11 @@
 - @title = 'BEAKER BUBBLES'
 - @body_class = 'index'
 
-.container
-  .row
-    .span12
-      .beaker
-        .bubble-1
-        .bubble-2
-        .bubble-3
-        .bubble-4
+%main{role:'main'}
+  .beaker
+    -5.times do
+      .bubble
 
-  %hr/
-  %footer
-    %p beaker bubbles © lab2023
+%hr
+%footer.footer
+  %small Beaker Bubbles © lab2023

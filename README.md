@@ -1,7 +1,7 @@
 beaker-bubbles
 ==============
 
-lab2023 brand animation with css3 property
+lab2023 brand animation with  CSS3 property
 
 lab2023 ‘ un logosundan baloncuk cıkartabilir miyiz dedik ve basladik kodlamaya.
 
@@ -59,5 +59,3 @@ Animasyonun hareket suresini ihtiva eder.
 Animasyonun kaç kez oynayacagini gosterir. infinite ile sonsuz bir tekrar olusturulurken, bir tam sayı ile bu dongu sınırlandırabilir.
 
 **Not:** İlerleyen zamanlarda animasyonu biraz daha gelistirmeyi dusunuyoruz. Ornegin icindeki sıvının dalgalanmasi baloncuklarin harekitinin iyilestirilmesi gibi dusucelerimiz var.
-
-Tesekkur Ederim.

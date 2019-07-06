@@ -1,93 +1,98 @@
 ###
-# Compass
-###
-
-# Bootstrap
-# First: 
-#    gem install sass-rails
-#    gem install bootstrap-sass
-require 'bootstrap-sass'
-
-# Susy grids in Compass
-# First: gem install compass-susy-plugin
-# require 'susy'
-
-# Change Compass configuration
-compass_config do |config|
-  config.output_style = :nested
-  config.http_path = '/'
-  config.images_dir = 'assets/images'
-  config.javascripts_dir = 'assets/javascripts'
-end
-
-# Cache Buster
-#activate :asset_hash
-activate :cache_buster
-
-###
 # Page options, layouts, aliases and proxies
 ###
 
 # Per-page layout changes:
-# 
+#
 # With no layout
-# page "/path/to/file.html", :layout => false
-# 
-# With alternative layout
-# page "/path/to/file.html", :layout => :otherlayout
-# 
-# A path which all have the same  layout
-# with_layout :admin do
-#   page "/admin/*"
-# end
+page '/*.xml', layout: false
+page '/*.json', layout: false
+page '/*.txt', layout: false
 
-# Proxy (fake) files
-# page "/this-page-has-no-template.html", :proxy => "/template-file.html" do
-#   @which_fake_page = "Rendering a fake page with a variable"
-# end
+# With alternative layout
+# page "/path/to/file.html", layout: :otherlayout
+
+# Proxy pages (http://middlemanapp.com/basics/dynamic-pages/)
+# proxy "/this-page-has-no-template.html", "/template-file.html", locals: {
+# which_fake_page: "Rendering a fake page with a local variable" }
 
 ###
 # Helpers
 ###
 
-# Automatic image dimensions on image_tag helper
-activate :automatic_image_sizes
+###
+# Environment List
+###
 
-# Live Reload
-activate :livereload
+# Server Environment
+configure :server do
 
-# Methods defined in the helpers block are available in templates
-# helpers do
-#   def some_helper
-#     "Helping"
-#   end
-# end
+  # Debug assets
+  set :debug_assets, true
 
-set :css_dir, 'assets/stylesheets'
-set :js_dir, 'assets/javascripts'
-set :images_dir, 'assets/images'
+end
 
-activate :directory_indexes
+# Development Environment
+configure :development do
 
-# Build-specific configuration
+  #To activate the middleman-sprockets
+  # activate :sprockets
+
+  # Reload the browser automatically whenever files change
+  activate :livereload, :no_swf => true
+
+  # Assets Pipeline Sets
+  set :css_dir, 'assets/stylesheets'
+  set :js_dir, 'assets/javascripts'
+  set :images_dir, 'assets/images'
+  set :fonts_dir, 'assets/fonts'
+
+  # Pretty URLs
+  # activate :directory_indexes
+
+end
+
+# Build Environment
 configure :build do
-  # For example, change the Compass output style for deployment
+  
+  # Automatic image dimensions on image_tag helpers
+  # activate :automatic_image_sizes
+
+  #To activate the middleman-sprockets
+  # activate :sprockets
+
+  # Autoprefixer
+  activate :autoprefixer do |prefix|
+    prefix.browsers = "last 1 versions"
+  end
+
+  # Minify CSS on build
   activate :minify_css
 
   # Minify Javascript on build
   activate :minify_javascript
 
-  # Enable cache buster
-  activate :cache_buster
+  # GZIP text files
+  # activate :gzip
+
+  # Append a hash to asset urls (make sure to use the url helpers)
+  # activate :asset_hash
 
   # Use relative URLs
   activate :relative_assets
+  
+end
 
-  # Compress PNGs after build
-  # First: gem install middleman-smusher
-  # require "middleman-smusher"
-  # activate :smusher
+# Production Environment
+configure :production do
 
-  # Or use a different image path
-  #set :http_path, "/img/"
+  # Assets Pipeline Sets
+  set :css_dir, 'assets/stylesheets'
+  set :js_dir, 'assets/javascripts'
+  set :images_dir, 'assets/images'
+  set :fonts_dir, 'assets/fonts'
+
+  # Middleman Production dev server run code
+  # 'middleman server -e production'
+
 end
